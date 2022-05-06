@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body{
+    height: 100%;
+}
+.pcolor1{
+    color: #ECFCFF;
+}
+.pcolor2{
+    color: #B2FCFF;
+}
+.pcolor3{
+    color: #5EDFFF;
+}
+.pcolor4{
+    color: #3E64FF;
+}
+.pbg1{
+    background-color: #ECFCFF;
+}
+.pbg2{
+    background-color: #B2FCFF;
+}
+.pbg3{
+    background-color: #5EDFFF;
+}
+.pbg4{
+    background-color: #3E64FF;
+}
