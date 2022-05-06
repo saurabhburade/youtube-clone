@@ -1,17 +1,18 @@
 import React from 'react'
 import { HiMenuAlt1 } from 'react-icons/hi'
 import NavItem from './NavItem'
-import { MdExplore } from 'react-icons/md'
-import * as riIcons from 'react-icons/ri'
+import { MdExplore, MdStream } from 'react-icons/md'
+import { RiVipCrown2Line } from 'react-icons/ri'
+// import * as riIcons from 'react-icons/ri'
 import * as aiIcons from 'react-icons/ai'
 import * as biIcons from 'react-icons/bi'
 import * as bsIcons from 'react-icons/bs'
 
 function Sidenav() {
   return (
-    <div className="h-screen bg-gray-100 border w-72">
+    <div className="sticky top-0 z-50 h-screen bg-gray-100 border w-72 ">
       <div className="flex justify-between px-5 pt-5 pb-5 w-100 nav-head">
-        <h2 className="text-2xl font-bold">LOGO</h2>
+        <h2 className="text-2xl font-bold">Youtube</h2>
         <HiMenuAlt1 size="2em" />
       </div>
       <div>
@@ -77,6 +78,24 @@ function Sidenav() {
             <bsIcons.BsScissors size="1.4em" />
           </div>
           <p>Your Clips</p>
+        </NavItem>
+      </div>
+      <hr />
+      <div className="">
+        <p className="p-5 pb-2">More from YT</p>
+        <NavItem>
+          {' '}
+          <div className="mr-5">
+            <RiVipCrown2Line size="1.4em" />
+          </div>
+          <p>Youtube Premium</p>
+        </NavItem>
+        <NavItem>
+          {' '}
+          <div className="mr-5">
+            <MdStream size="1.4em" />
+          </div>
+          <p>Go Live</p>
         </NavItem>
       </div>
     </div>

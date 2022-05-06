@@ -3,7 +3,7 @@ import * as bsIcons from 'react-icons/bs'
 
 function Header() {
   return (
-    <div className="flex items-center justify-between w-full px-5 py-5 bg-gray-100 border">
+    <div className="sticky top-0 z-50 flex items-center justify-between w-full px-5 py-5 bg-gray-100 border ">
       <div className="flex md:w-1/3">
         <input
           className="w-full px-4 py-2 leading-tight text-gray-700 bg-gray-200 border-2 border-gray-200 rounded appearance-none focus:border-purple-500 focus:bg-white focus:outline-none"
