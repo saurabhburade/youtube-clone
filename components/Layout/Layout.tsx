@@ -1,8 +1,9 @@
 import React from 'react'
 import Header from '../Header/Header'
 import Sidenav from '../Sidenav/Sidenav'
+type Props = { children: React.ReactNode }
 
-function Layout({ children }) {
+const Layout = (props: Props) => {
   return (
     <div className="h-full">
       <div className="flex">
@@ -11,11 +12,10 @@ function Layout({ children }) {
         </div>
         <div className="w-full">
           <Header />
-          {children}
+          {props.children}
         </div>
       </div>
     </div>
   )
 }
-
 export default Layout
