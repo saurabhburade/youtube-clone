@@ -6,7 +6,7 @@ type Props = {
 
 function VideoCard({ item }: Props) {
   return (
-    <div className="relative m-5 overflow-hidden cursor-pointer w-72 rounded-2xl">
+    <div className="relative w-64 m-5 overflow-hidden cursor-pointer rounded-2xl">
       <img
         src={`https://i.ytimg.com/vi/${item?.id}/hqdefault.jpg`}
         alt={item?.snippet?.title}

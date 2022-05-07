@@ -10,7 +10,7 @@ import * as bsIcons from 'react-icons/bs'
 
 function Sidenav() {
   return (
-    <div className="sticky top-0 z-50 h-screen bg-gray-100 border w-72 ">
+    <div className="sticky top-0 z-50 w-64 h-screen bg-gray-100 border ">
       <div className="flex justify-between px-5 pt-5 pb-5 w-100 nav-head">
         <h2 className="text-2xl font-bold">Youtube</h2>
         <HiMenuAlt1 size="2em" />
