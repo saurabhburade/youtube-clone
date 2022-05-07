@@ -8,11 +8,11 @@ import Layout from '../components/Layout/Layout'
 import items from '../components/Sidenav/sample'
 import VideoCard from '../components/VideoCard/VideoCard'
 const Home: NextPage = () => {
-  const [videosData, setvideosData] = useState({})
+  const [videosData, setvideosData] = useState([])
   useEffect(() => {
     const fetchVideos = async () => {
       const res = await axios.get(
-        'https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&key=' +
+        'https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics%2Cplayer&maxResults=50&chart=mostPopular&videoCategoryId=28&key=' +
           process.env.NEXT_PUBLIC_YT_API_KEY
       )
       setvideosData(res.data.items)
@@ -24,17 +24,9 @@ const Home: NextPage = () => {
     <>
       <Layout>
         <div className="flex flex-wrap items-center mt-6 sm:w-full">
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard /> <VideoCard />
-          <VideoCard /> <VideoCard />
-          <VideoCard /> <VideoCard />
-          <VideoCard /> <VideoCard />
-          <VideoCard /> <VideoCard />
-          <VideoCard /> <VideoCard />
-          <VideoCard /> <VideoCard />
-          <VideoCard />
+          {videosData.map((item) => {
+            return <VideoCard item={item} />
+          })}
         </div>
 
         <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
