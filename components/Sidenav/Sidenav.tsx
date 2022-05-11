@@ -30,13 +30,17 @@ function Sidenav() {
             </NavItem>
           </div>
         </Link>
-        <NavItem>
-          {' '}
-          <div className="mr-5">
-            <bsIcons.BsFlower2 size="1.4em" />
+        <Link href="/discover">
+          <div>
+            <NavItem>
+              {' '}
+              <div className="mr-5">
+                <bsIcons.BsFlower2 size="1.4em" />
+              </div>
+              <p>Discover</p>
+            </NavItem>
           </div>
-          <p>Discover</p>
-        </NavItem>
+        </Link>
         <NavItem>
           {' '}
           <div className="mr-5">

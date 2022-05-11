@@ -12,7 +12,7 @@ const Home: NextPage = () => {
   useEffect(() => {
     const fetchVideos = async () => {
       const res = await axios.get(
-        'https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics%2Cplayer&maxResults=50&chart=mostPopular&videoCategoryId=28&key=' +
+        'https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics%2Cplayer&maxResults=50&chart=mostPopular&key=' +
           process.env.NEXT_PUBLIC_YT_API_KEY
       )
       setvideosData(res.data.items)
