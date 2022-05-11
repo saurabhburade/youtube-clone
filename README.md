@@ -1,5 +1,6 @@
 ## Youtube Revamped
 
+![Youtube](./10yt-clone-frame.png)
 
 ### Tech Stack Used
  - NextJS
