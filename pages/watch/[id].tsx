@@ -131,7 +131,7 @@ export default function index(props: Props) {
         <div className="w-3/12 h-screen overflow-x-hidden overflow-y-scroll">
           <p className="mx-5 font-semibold">Recomended</p>
           {recomendData.map((item: any) => {
-            return <VideoCard item={item} />
+            return <VideoCard item={item} key={item?.id} />
           })}
         </div>
       </div>

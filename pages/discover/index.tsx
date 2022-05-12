@@ -102,8 +102,8 @@ export default function index({ }: Props) {
           <p className="my-3 font-semibold">Fashion</p>
         </div>
         <div className="flex flex-wrap items-center mt-6 sm:w-full">
-          {videosData.map((item) => {
-            return <VideoCard item={item} />
+          {videosData.map((item:any) => {
+            return <VideoCard item={item} key={item?.id} />
           })}
         </div>
       </div>

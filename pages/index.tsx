@@ -24,8 +24,8 @@ const Home: NextPage = () => {
     <>
       <Layout>
         <div className="flex flex-wrap items-center mt-6 sm:w-full">
-          {videosData.map((item) => {
-            return <VideoCard item={item} />
+          {videosData.map((item:any) => {
+            return <VideoCard item={item} key={item?.id} />
           })}
         </div>
 

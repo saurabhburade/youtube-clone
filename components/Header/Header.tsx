@@ -9,7 +9,7 @@ function Header() {
           className="w-full px-4 py-2 leading-tight text-gray-700 bg-gray-200 border-2 border-gray-200 rounded appearance-none focus:border-purple-500 focus:bg-white focus:outline-none"
           id="inline-full-name"
           type="text"
-          value="Jane Doe"
+          defaultValue="Jane Doe"
         />
         <button className="p-3 -ml-3 text-white bg-blue-500 rounded active:ring-1">
           <svg
