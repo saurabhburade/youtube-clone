@@ -1,9 +1,13 @@
 import React from 'react'
 import * as bsIcons from 'react-icons/bs'
+import useTheme from '../../hooks/useTheme'
 
 function Header() {
+  const { setThemeMode,theme } = useTheme()
+
+  
   return (
-    <div className="sticky top-0 z-50 flex items-center justify-between w-full px-5 py-5 bg-gray-100 border ">
+    <div className="sticky top-0 z-50 flex items-center justify-between w-full px-5 py-5 bg-gray-100 border dark:bg-gray-500 ">
       <div className="flex md:w-1/3">
         <input
           className="w-full px-4 py-2 leading-tight text-gray-700 bg-gray-200 border-2 border-gray-200 rounded appearance-none focus:border-purple-500 focus:bg-white focus:outline-none"
@@ -36,6 +40,18 @@ function Header() {
         </button>
         <button className="p-2 mx-5 font-bold bg-blue-100 rounded-full btn active:ring-1 ">
           <bsIcons.BsBell size="1.2em" />
+        </button>
+        <button
+          className="p-2 mx-5 font-bold bg-blue-100 rounded-full btn active:ring-1 "
+          onClick={() => setThemeMode('dark')}
+        >
+          <bsIcons.BsMoonFill size="1.2em" />
+        </button>
+        <button
+          className="p-2 mx-5 font-bold bg-blue-100 rounded-full btn active:ring-1 "
+          onClick={() => setThemeMode('light')}
+        >
+          <bsIcons.BsLightbulb size="1.2em" />
         </button>
         {/* <button className="px-5 py-2 bg-blue-200 rounded btn">
              <bsIcons.BsBell size="1.4em/>
