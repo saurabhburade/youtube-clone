@@ -102,9 +102,26 @@ export default function index({ }: Props) {
           <p className="my-3 font-semibold">Fashion</p>
         </div>
         <div className="flex flex-wrap items-center mt-6 sm:w-full">
-          {videosData.map((item:any) => {
-            return <VideoCard item={item} key={item?.id} />
-          })}
+          {videosData?.length
+            ? videosData.map((item: any) => {
+                return <VideoCard item={item} key={item?.id} />
+              })
+            : new Array(10)?.fill(0)?.map((v, idx) => {
+                return (
+                  <div className="relative top-0 w-64 m-5 border shadow rounded-2xl">
+                    <div className="animate-pulse">
+                      <div className="flex-1 space-y-1">
+                        <div className="rounded h-44 bg-slate-700"></div>
+                        <div className="absolute bottom-0 w-full p-5 text-ellipsis bg-white/10 text-gray-50 backdrop-blur-sm">
+                          <p className="overflow-hidden text-sm truncate">
+                            <div className="h-8 rounded bg-slate-700"></div>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
         </div>
       </div>
     </Layout>

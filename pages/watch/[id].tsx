@@ -7,7 +7,6 @@ import VideoCard from '../../components/VideoCard/VideoCard'
 import * as bsIcons from 'react-icons/bs'
 type Props = {}
 
-
 function nFormatter(num: number, digits: number) {
   const lookup = [
     { value: 1, symbol: '' },
@@ -31,7 +30,6 @@ function nFormatter(num: number, digits: number) {
 }
 
 export default function index(props: Props) {
-  
   const router = useRouter()
   const id = router?.query?.id
   console.log({ props, id })
@@ -68,13 +66,24 @@ export default function index(props: Props) {
       {/* <video src={`https://youtu.be/${id}`} crossOrigin="true"></video> */}
       <div className="flex justify-between w-full p-5 ">
         <div className="w-9/12 m-5">
-          <ReactPlayer
-            url={`https://youtu.be/${id}`}
-            className="w-full overflow-hidden rounded-3xl"
-            controls
-            width="100"
-            height={500}
-          />
+          {video?.snippet ? (
+            <ReactPlayer
+              url={`https://youtu.be/${id}`}
+              className="w-full overflow-hidden rounded-3xl"
+              controls
+              width="100"
+              height={500}
+            />
+          ) : (
+            <div className="relative top-0 w-full overflow-hidden border shadow h-96 rounded-3xl">
+              <div className="animate-pulse">
+                <div className="space-y-1 ">
+                  <div className="w-full rounded h-96 bg-slate-700"></div>
+                </div>
+              </div>
+            </div>
+          )}
+
           <div className="flex items-center justify-between">
             <p className="my-3 text-sm ">
               {new Date('2022-05-06T04:00:11Z').toDateString()}
@@ -130,9 +139,27 @@ export default function index(props: Props) {
         </div>
         <div className="w-3/12 h-screen overflow-x-hidden overflow-y-scroll">
           <p className="mx-5 font-semibold">Recomended</p>
-          {recomendData.map((item: any) => {
-            return <VideoCard item={item} key={item?.id} />
-          })}
+          {recomendData?.length
+            ? recomendData.map((item: any) => {
+                return <VideoCard item={item} key={item?.id} />
+              })
+            : new Array(10)?.fill(0)?.map((v, idx) => {
+                return (
+                  <div className="relative top-0 w-64 m-5 border shadow rounded-2xl">
+                    <div className="animate-pulse">
+                      <div className="flex-1 space-y-1">
+                        <div className="rounded h-44 bg-slate-700"></div>
+                        <div className="absolute bottom-0 w-full p-5 text-ellipsis bg-white/10 text-gray-50 backdrop-blur-sm">
+                          <p className="overflow-hidden text-sm truncate">
+                            <div className="h-8 rounded bg-slate-700"></div>
+                          </p>
+                        </div>
+                        {/* <div className="h-8 rounded bg-slate-700"></div> */}
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
         </div>
       </div>
     </Layout>
